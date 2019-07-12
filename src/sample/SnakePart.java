@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javafx.scene.shape.Rectangle;
 
@@ -16,7 +17,10 @@ public class SnakePart {
     SnakePart(){
         try {
             BufferedImage image = ImageIO.read(new File("head2.png"));
-            snakePart = new Image("bodyPart.png");
+            snakeHead = SwingFXUtils.toFXImage(image,null);
+            image = ImageIO.read(new File("bodyPart.png"));
+            snakePart = SwingFXUtils.toFXImage(image,null);
+
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -24,5 +28,9 @@ public class SnakePart {
 
     public Image getSnakePart() {
         return snakePart;
+    }
+
+    public Image getSnakeHead() {
+        return snakeHead;
     }
 }

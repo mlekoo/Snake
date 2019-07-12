@@ -2,7 +2,7 @@ package sample;
 
 import javafx.scene.Node;
 
-public class Snake extends Node {
+public class Snake {
 
     private int length;
     private int posX;

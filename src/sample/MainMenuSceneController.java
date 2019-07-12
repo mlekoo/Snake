@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+import javafx.event.EventHandler;
 public class MainMenuSceneController {
 
     private Stage mainStage;
@@ -26,7 +26,6 @@ public class MainMenuSceneController {
         try {
             Parent game = fxmlLoader.load();
             mainStage.setScene(new Scene(game,1280,720));
-
             GameSceneController gameSceneController = fxmlLoader.getController();
             gameSceneController.setMainStage(mainStage);
         }catch (IOException e){
